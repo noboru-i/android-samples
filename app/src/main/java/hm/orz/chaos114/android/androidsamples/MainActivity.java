@@ -1,12 +1,12 @@
 package hm.orz.chaos114.android.androidsamples;
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Toast;
 
 import hm.orz.chaos114.android.androidsamples.databinding.ActivityMainBinding;
 
@@ -26,8 +26,18 @@ public class MainActivity extends AppCompatActivity {
         binding.list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(MainActivity.this, screens[position], Toast.LENGTH_SHORT).show();
+                start(screens[position]);
             }
         });
+    }
+
+    private void start(String screenName) {
+        String className = screenName + "Activity";
+        try {
+            Intent intent = new Intent(this, Class.forName(getPackageName() + "." + className));
+            startActivity(intent);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
