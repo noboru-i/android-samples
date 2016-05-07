@@ -1,0 +1,20 @@
+machine:
+  java:
+    version: oraclejdk8
+  timezone: Asia/Tokyo
+  environment:
+    TERM: "dumb"
+    JAVA_OPTS: "-Xms512m -Xmx1024m"
+    GRADLE_OPTS: '-Dorg.gradle.jvmargs="-Xmx2048m -XX:+HeapDumpOnOutOfMemoryError"'
+dependencies:
+  pre:
+    - echo y | android update sdk --no-ui --all --filter "tools"
+    - echo y | android update sdk --no-ui --all --filter "build-tools-23.0.3,extra-google-m2repository,extra-android-m2repository"
+test:
+  override:
+    - echo 1
+deployment:
+  master:
+    branch: master
+    commands:
+      - ./gradlew :app:uploadDeployGateDebug -PdisablePreDex
