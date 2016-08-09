@@ -12,7 +12,8 @@ import hm.orz.chaos114.android.androidsamples.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
     private static final String[] screens = {
-            "NestedScrollView"
+            "NestedScrollView",
+            "Typography"
     };
 
     ActivityMainBinding binding;
