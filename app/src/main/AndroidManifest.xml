@@ -16,7 +16,23 @@
             </intent-filter>
         </activity>
         <activity android:name=".NestedScrollViewActivity" />
-        <activity android:name=".TypographyActivity"></activity>
+        <activity android:name=".TypographyActivity" />
+        <activity android:name=".ShareActivity" />
+
+        <activity
+            android:name=".MailShareActivity"
+            android:exported="true"
+            android:icon="@drawable/ic_dialog_email"
+            android:label="Email">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/*" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>

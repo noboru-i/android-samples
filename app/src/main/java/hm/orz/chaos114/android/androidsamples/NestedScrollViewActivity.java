@@ -1,7 +1,7 @@
 package hm.orz.chaos114.android.androidsamples;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 public class NestedScrollViewActivity extends AppCompatActivity {
 
