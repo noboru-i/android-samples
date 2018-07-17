@@ -14,7 +14,8 @@ public class MainActivity extends AppCompatActivity {
     private static final String[] screens = {
             "NestedScrollView",
             "Typography",
-            "Share"
+            "Share",
+            "BottomNavigation"
     };
 
     ActivityMainBinding binding;
