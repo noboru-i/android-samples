@@ -15,7 +15,8 @@ public class MainActivity extends AppCompatActivity {
             "NestedScrollView",
             "Typography",
             "Share",
-            "BottomNavigation"
+            "BottomNavigation",
+            "Speech"
     };
 
     ActivityMainBinding binding;
